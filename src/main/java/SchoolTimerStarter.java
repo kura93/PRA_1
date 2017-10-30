@@ -27,9 +27,9 @@ public class SchoolTimerStarter {
 
             Trigger trigger = newTrigger()
                     .withIdentity("trigger7", "group1")
-
-                    .withSchedule(cronSchedule("* * * ? * *"))
-
+                    .startAt(prepareStartingDate())
+                    .endAt(prepareEndingDate())
+                    .withSchedule(cronSchedule("0 * 8-19 ? * MON-FRI *"))
                     .build();
 
             scheduler.scheduleJob(job, trigger);

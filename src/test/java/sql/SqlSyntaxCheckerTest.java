@@ -31,14 +31,14 @@ public class SqlSyntaxCheckerTest {
     }
     @Test
     public void isSyntaxCorrect4() throws Exception {
-        String sentence = "SELECT * FROM sth WHERE DADSA (DSA ) DSA DA ORDER BY";
+        String sentence = "SELECT * FROM sth WHERE DADSA (DSA ) DSA DA ORDER BY SELECT * FROM DSAHD ";
         SqlSyntaxChecker checker = new SqlSyntaxChecker(sentence);
         assertEquals(true, checker.isSyntaxCorrect());
     }
     @Test
     public void isSyntaxCorrect5() throws Exception {
-        String sentence = "SELECT * FROM sth WHERE DADSA (DSA ) DSA DA ORDER BY";
+        String sentence = "SELECT * FROM sth WHERE DADSA (DSA ) DSA DA ORDER BY SELECT";
         SqlSyntaxChecker checker = new SqlSyntaxChecker(sentence);
-        assertEquals(true, checker.isSyntaxCorrect());
+        assertEquals(false, checker.isSyntaxCorrect());
     }
 }

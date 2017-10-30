@@ -24,7 +24,6 @@ public class SchoolJob implements org.quartz.Job {
 
     public void execute(JobExecutionContext context) throws JobExecutionException {
         TimeBlock currentBlock = this.getCurrentTimeBlock();
-        System.out.println("dzialam");
         if(currentBlock == null) {
             System.out.println("Uczelnia zamknięta");
         } else {
